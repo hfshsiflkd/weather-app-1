@@ -30,7 +30,7 @@ const Output = (props) => {
 
   return (
     <div className="flex h-screen">
-      <div className="flex h-screen absolute w-screen justify-center  ">
+      <div className="flex h-screen absolute w-screen justify-center overflow-hidden ">
         <div className=" absolute z-40  flex flex-col  rounded-full justify-between items-center  ">
           <div className=" z-40 w-[467px] h-[80px] p-[16px] pr-[60px] bg-white mr-[50px] flex  rounded-full justify-between items-center m-[100px] ml-[30px] mb-0">
           <svg
@@ -51,9 +51,9 @@ const Output = (props) => {
           />
           </div>
           
-           {countryData.map((country, index) => {
+           {/* {countryData.map((country, index) => {
               return <div key={index} className="flex flex-col"> {country.country} </div>
-          })}
+          })} */}
            
         </div>
        
