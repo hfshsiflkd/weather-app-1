@@ -3,6 +3,8 @@ import Sun from "../img/sun.png";
 import Moon from "../img/moon.png";
 import { useEffect, useState } from "react";
 import { CitiesFilter } from "../utils/Citiesfilter";
+import bgsun from "../img/Ellipse sun.png"
+import bgmoon from "../img/Ellipse.png"
 
 
 const Output = (props) => {
@@ -138,8 +140,14 @@ const Output = (props) => {
             </div>
             <h6 className="font-extrabold mb-12 h-6 text-violet-600">{weather.condition}</h6>
           </div>
+        
         </div>
+        <img src={bgsun} 
+      className="w-[176px] h-[176px] absolute top-0 left-0"
+      
+      />
       </div>
+    
       <div className="flex-1 bg-customDark flex items-center justify-center flex-col">
         <div className="text-black w-[414px] h-[760px] flex flex-col justify-center items-start  bg-black rounded-3xl z-30 shadow-lg bg-customDark/75 backdrop-blur">
           <div className="w-[414px] h-[514px] px-[40px] py-[56px] flex justify-between items-center flex-col">
@@ -161,6 +169,10 @@ const Output = (props) => {
             <h6 className="font-extrabold mb-12 h-6 text-yellow-400">{weather.condition}</h6>
           </div>
         </div>
+        <img src={bgmoon} 
+      className="w-[176px] h-[176px] absolute bottom-0 right-0"
+      
+      />
       </div>
     </div>
   );
