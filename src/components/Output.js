@@ -31,7 +31,8 @@ const Output = (props) => {
   return (
     <div className="flex h-screen">
       <div className="flex h-screen absolute w-screen justify-center  ">
-        <div className=" absolute z-40 w-[467px] h-[80px] p-[16px] pr-[60px] bg-white mr-[50px] flex flex-col rounded-full justify-between items-center m-[100px] ml-[30px] ">
+        <div className=" absolute z-40  flex flex-col  rounded-full justify-between items-center  ">
+          <div className=" z-40 w-[467px] h-[80px] p-[16px] pr-[60px] bg-white mr-[50px] flex  rounded-full justify-between items-center m-[100px] ml-[30px] mb-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -48,12 +49,14 @@ const Output = (props) => {
             placeholder="Search"
             className="w-[350px] h-[40px] border-none text-3xl focus:outline-none "
           />
-          {countryData.map((country, index) => {
-            return <div key={index} className="flex flex-col"> {country.country} </div>
-
-
-        })}
+          </div>
+          
+           {countryData.map((country, index) => {
+              return <div key={index} className="flex flex-col"> {country.country} </div>
+          })}
+           
         </div>
+       
         
       </div>
 
@@ -79,7 +82,7 @@ const Output = (props) => {
         </div>
       </div>
       <div className="flex-1 bg-customDark flex items-center justify-center flex-col">
-        <div className="text-black w-[414px] h-[760px] flex flex-col justify-center items-start  bg-black rounded-3xl z-30 shadow-lg bg-[#0F141E]/75 backdrop-blur">
+        <div className="text-black w-[414px] h-[760px] flex flex-col justify-center items-start  bg-black rounded-3xl z-30 shadow-lg bg-customDark/75 backdrop-blur">
           <div className="w-[414px] h-[514px] px-[40px] py-[56px] flex justify-between items-center flex-col">
             <div className="w-[334px] h-[80px] flex justify-center items-center">
               <div className="w-[291px] h-[80px] flex flex-col justify-center items-start">
