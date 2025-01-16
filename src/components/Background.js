@@ -1,18 +1,16 @@
 import React from "react";
-import Logoleft from "../img/leftlogo.png";
-import Logorigth from "../img/rigthlogo.png";
 
 const Background = (props) => {
   return (
     <div className="absolute inset-0  flex items-center justify-center overflow-hidden underline">
       <div className="absolute w-[140px] h-[140px] border  border-customBorder rounded-full bg-customWhite z-20 flex space-x-4 justify-center items-center">
         <img
-          src={Logoleft}
+          src={"./img/leftlogo.png"}
           style={{ width: "43px", height: "86px" }}
           className="z-30"
         />
         <img
-          src={Logorigth}
+          src={"./img/rigthlogo.png"}
           style={{ width: "43px", height: "86px" }}
           className="z-30"
         />
