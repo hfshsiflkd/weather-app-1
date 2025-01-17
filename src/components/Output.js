@@ -3,6 +3,7 @@ import { CitiesFilter } from "../utils/Citiesfilter";
 import Localization from "../icons/localization_icon";
 import dateFormat, { masks } from "dateformat";
 import WeatherWithImages from "./Weathercondition";
+import WeatherWithImagesnigth from "./WeatherconditionNigth";
 
 const WEATHER_API_KEY = "5b55bf7eca3c4e1b96622036251501";
 
@@ -56,6 +57,8 @@ const Output = (props) => {
       setWeatherLoading(false);
     }
   };
+  console.log("weather",weather);
+  
 
   useEffect(() => {
     fetchData();
@@ -75,6 +78,7 @@ const Output = (props) => {
         .slice(0, 4)
     );
   };
+  
   const handleCityClick = (city) => {
     setSelectedCity(city.split(",")[0]);
     setFilteredData([]);
@@ -115,7 +119,7 @@ const Output = (props) => {
       </div>
 
       <div className="flex-1 bg-customWhite flex-col flex  items-center justify-center ">
-        {weatherLoding ? (
+        {weatherLoding && !weather.condition? (
           <div role="status">
             <svg
               aria-hidden="true"
@@ -202,7 +206,7 @@ const Output = (props) => {
                 </div>
                 <Localization />
               </div>
-              <img src={"./img/moon.png"} className="w-[300px] h-[300px]" />
+              <WeatherWithImagesnigth condition={weather.condition} />
             </div>
             <div className="px-12 w-[414px] h-[269px]">
               <div className="w-[318px] h-[165px] text-[90px] text-transparent bg-clip-text font-extrabold -mt-10 bg-gradient-to-b from-white to-black  font-extrabold">

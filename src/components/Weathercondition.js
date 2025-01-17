@@ -1,67 +1,68 @@
-const WeatherWithImages = ({ condition = { text: "Unknown", icon: "" } }) => {
-    const renderWeatherImage = () => {
-      // text утгыг аюулгүй байдлаар авах
-      const text = condition.text ? condition.text.toLowerCase() : "unknown";
-  
-      // Snow нөхцөл
-      if (text.includes("snow")) {
-        return (
-          <img
-            src="/img/Day Snow.png"
-            alt="Snow"
-            className="rounded-lg shadow-md"
-          />
-        );
-      }
-  
-      // Rain нөхцөл
-      if (text.includes("rain")) {
-        return (
-          <img
-            src="/img/Day Rain.png"
-            alt="Rain"
-            className="rounded-lg shadow-md"
-          />
-        );
-      }
-  
-      // Sunny нөхцөл
-      if (text.includes("sunny") || text.includes("clear")) {
-        return (
-          <img
-            src="/img/sun.png"
-            alt="Sunny"
-            className="rounded-lg shadow-md"
-          />
-        );
-      }
-  
-      // Partly Cloudy нөхцөл
-      if (text.includes("partly cloudy")) {
-        return (
-          <img
-            src="/img/Day Clouds.png"
-            alt="Partly Cloudy"
-            className="rounded-lg shadow-md"
-          />
-        );
-      }
-  
-      // Анхдагч зураг
-      return (
-        <img
-          src={condition.icon ? `https:${condition.icon}` : "/img/sun.png"}
-          alt={condition.text}
-          className="rounded-lg shadow-md"
-        />
-      );
-    };
-  
+const WeatherWithImages = ({ condition } ) => {
+  if (condition === undefined) return;
+
+  // Snow нөхцөл
+  if (condition.toLowerCase().includes("snow")) {
     return (
-      <div>
-        {renderWeatherImage()}
-      </div>
+      <img
+        src="/img/Day Snow.png"
+        alt="Snow"
+      />
     );
-  };
-  
-  export default WeatherWithImages;
+  }
+
+  // Rain нөхцөл
+  else if (condition.toLowerCase().includes("rain")) {
+    return (
+      <img
+        src="/img/Day Rain.png"
+        alt="Rain"
+      />
+    );
+  }
+
+  // Sunny нөхцөл
+  else if (
+    condition.toLowerCase().includes("sunny") ||
+    condition.toLowerCase().includes("clear")
+  ) {
+    return (
+      <img src="/img/sun.png" alt="Sun" />
+    );
+  }
+
+  // Partly Cloudy нөхцөл
+  else if (condition.toLowerCase().includes("partly cloudy")) {
+    return (
+      <img
+        src="/img/Day Clouds.png"
+        alt="Partly Cloudy"
+      />
+    );
+  } else if (condition.toLowerCase().includes("storm")) {
+    return (
+      <img
+        src="/img/Day Storm.png"
+        alt="Partly Cloudy"
+      />
+    );
+  } else if (condition.toLowerCase().includes("wind")) {
+    return (
+      <img
+        src="/img/Day Wind.png"
+        alt="Partly Cloudy"
+      />
+    );
+  }
+
+  // Анхдагч зураг
+  else
+    return (
+      <img
+        src={"/img/sun.png"}
+        alt={condition}
+      />
+    );
+};
+
+export default WeatherWithImages;
