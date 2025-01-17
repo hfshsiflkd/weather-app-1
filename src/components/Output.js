@@ -57,7 +57,7 @@ const Output = (props) => {
       setWeatherLoading(false);
     }
   };
-  console.log("weather",weather);
+
   
 
   useEffect(() => {
