@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import { CitiesFilter } from "../utils/Citiesfilter";
-import Localization from "../icons/localization_icon";
-import dateFormat, { masks } from "dateformat";
-import WeatherWithImages from "./Weathercondition";
 import { DayCard } from "./DayCard";
 import { NightCard } from "./NightCard";
 import { Search } from "./Search";
