@@ -19,8 +19,12 @@ export const Airpollution = (props) => {
       return "🏭";
     } else if (weather.airquality <= 500) {
       return "💀";
+    }else {
+      return "💀";
     }
   };
+  
+  const airQualityScore = weather.airquality && Math.floor(weather.airquality);
 
   return (
     <div className="flex h-screen absolute w-screen justify-start items-end overflow-hidden ">
@@ -35,7 +39,7 @@ export const Airpollution = (props) => {
               {Airpollutionemoji()}
             </div>
             <div className="w-[50px] h-[50px] text-black rounded-lg flex justify-center items-center text-3xl font-semibold">
-              {Math.floor(weather.airquality)}
+              {airQualityScore}
             </div>
             <div className="w-[50px] h-[50px] rounded-lg flex justify-center items-center text-4xl font-semibold ">
               {" "}
