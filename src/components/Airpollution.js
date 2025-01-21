@@ -49,6 +49,6 @@ export const Airpollution = (props) => {
          
         </div>
       
-    </div>
+o     </div>
   );
 };
