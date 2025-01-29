@@ -15,7 +15,7 @@ export const Search = (props) => {
             type="text"
             value={countriesSeacrch}
             placeholder="Search"
-            className="w-[350px] h-[40px] border-none text-3xl focus:outline-none "
+            className="w-[350px] h-[40px] border-none text-3xl focus:outline-none focus:ring-0"
           />
         </div>
         <div className=" bg-white rounded-lg overflow-hidden mt-2.5 rounded-3xl bg-white/80 py-4 shadow-lg backdrop-blur-md mr-[20px] ">
