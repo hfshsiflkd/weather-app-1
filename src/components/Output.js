@@ -5,7 +5,7 @@ import { NightCard } from "./NightCard";
 import { Search } from "./Search";
 import { Airpollution } from "./Airpollution";
 
-const WEATHER_API_KEY = "5b55bf7eca3c4e1b96622036251501";
+const WEATHER_API_KEY = "472b9d0120b44786a7340053251302";
 
 const Output = (props) => {
   const [countriesSeacrch, setCountriesSearch] = useState("");
@@ -43,17 +43,18 @@ const Output = (props) => {
 
       const weatherData = {
         max_c: result.forecast.forecastday[0].day.maxtemp_c,
-        min_c: result.forecast.forecastday[0].day.mintemp_c,
+        min_c: result.forecast.forecastday[0].day.mintemp_f,
         condition: result.forecast.forecastday[0].day.condition.text,
         date: result.forecast.forecastday[0].date,
         icon: result.forecast.forecastday[0].day.condition.icon,
         city: result.location.name,
-        airquality: result.forecast.forecastday[0].day.air_quality.pm2_5,
+        airquality: result.current.air_quality.pm2_5,
       };
+      console.log(weatherData);
 
       setWeather(weatherData);
     } catch (error) {
-      console.log("error");
+      console.log("error", error);
     } finally {
       setWeatherLoading(false);
     }
@@ -94,7 +95,11 @@ const Output = (props) => {
       />
       <DayCard weather={weather} weatherLoding={weatherLoding} />
       <NightCard weather={weather} weatherLoding={weatherLoding} />
-      <Airpollution selectedCity={selectedCity} weather={weather} weatherLoding={weatherLoding} />
+      <Airpollution
+        selectedCity={selectedCity}
+        weather={weather}
+        weatherLoding={weatherLoding}
+      />
     </div>
   );
 };
